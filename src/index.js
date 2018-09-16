@@ -3,7 +3,13 @@
  * Seven grayscale conversion algorithms (with pseudocode and VB6 source code)
  * Tanner Helland
  * 
- * 
+ * [https://www.w3.org/TR/WCAG20]
+ * Web Content Accessibility Guidelines (WCAG) 2.0
+ * Ben Caldwell, Trace R&D Center, University of Wisconsin-Madison
+ * Michael Cooper, W3C
+ * Loretta Guarino Reid, Google, Inc.
+ * Gregg Vanderheiden, Trace R&D Center, University of Wisconsin-Madison
+ *
  */
 
 class Color {
@@ -103,13 +109,6 @@ class Color {
     return new Class( func(this.r), func(this.g), func(this.b), func(this.a) );
   }
 
-
-  /**
-   * Color opreations
-   * - invert 
-   * 
-   */
-
   /**
    * @returns {Color} the resulting color of the interpolation between this and endColor
    * @param {Color} endColor the color to interpolate with
@@ -156,6 +155,20 @@ class Color {
    */
   grayscaleFastest() {
     return new Color( this.g, this.g, this.g );
+  }
+
+  /**
+   * Computes the relative luminance of the color
+   * [https://www.w3.org/TR/WCAG20/#relativeluminancedef]
+   * @returns {number} the relative luminance of the color
+   */
+  relativeLuminance() {
+    let ret = [];
+    for( let i = 0; i < 3; i++ ) {
+      let component = this.colors[i];
+      ret[i] = component <= 10.0164 ? component / 12.92 : Math.pow( (component+14.025)/268.025, 2.4 );
+    }
+    return Color.fromArray(ret);
   }
 }
 
