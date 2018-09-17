@@ -23,10 +23,10 @@ test( "color instantiation using different inputs", () => {
 
 test( "color getters", () => {
   let color = new Color(245,51,111);
-  expect( color.rgb() ).toEqual( "rgb(245, 51, 111)" );
-  expect( color.rgba() ).toEqual( "rgba(245, 51, 111, 1)" );
+  expect( color.rgb ).toEqual( "rgb(245, 51, 111)" );
+  expect( color.rgba ).toEqual( "rgba(245, 51, 111, 1)" );
   expect( color.toArray() ).toEqual( [ 245, 51, 111, 1.0 ] );
-  expect( color.hex() ).toEqual( "#f5336f" );
+  expect( color.hex ).toEqual( "#f5336f" );
   expect( new Color( 135.1, 140.5, 120 ).rounded().toObject() ).toEqual({ r: 135, g: 141, b: 120, a: 1 });
 });
 
@@ -34,6 +34,7 @@ test( "class convertion", () => {
   let testClass = (r,g,b) => [r,g,b],
       testFunc = x => x*2;
   expect( new Color(20,25,30).convert(testClass,testFunc) ).toEqual( [40,50,60] );
+  expect( new Color(20,30,40).apply(x => x-5).toObject() ).toEqual( { r: 15, g: 25, b: 35, a: 1 } );
 });
 
 test( "color operations", () => {
