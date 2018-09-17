@@ -124,3 +124,5 @@ Color.prototype = {
   }
 };
 
+
+module.exports = Color;
