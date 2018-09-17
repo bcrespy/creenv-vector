@@ -1,4 +1,4 @@
-import Color from '../src/index';
+import Color from '../lib/index';
 
 
 /**
