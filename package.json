@@ -1,34 +1,23 @@
 {
-  "name": "modern-package-boilerplate",
-  "version": "2.3.4",
-  "description": "Powerfull, flexible and easy-to-use boilerplate for creating modern npm packages. Features: rollup, babel, react (optional), flow (optional), jest, enzyme, eslint, travis-ci, coveralls, renovate",
+  "name": "creenv-color",
+  "version": "0.1.0",
+  "description": "Immutable color class, can be used for storing colors of color operations",
   "keywords": [
-    "npm-package",
-    "package",
-    "npm",
-    "boilerplate",
-    "rollup",
-    "babel",
-    "react",
-    "flow",
-    "jest",
-    "enzyme",
-    "eslint",
-    "travis",
-    "travis-ci",
-    "coveralls",
-    "renovate"
+    "color",
+    "colors",
+    "color operations",
+    "creenv"
   ],
   "license": "MIT",
-  "author": "Eugene Nikitin",
-  "homepage": "http://github.com/eunikitin/modern-package-boilerplate.git",
+  "author": "Baptiste Crespy",
+  "homepage": "https://github.com/bcrespy/creenv-color.git",
   "repository": {
     "type": "git",
-    "url": "http://github.com/eunikitin/modern-package-boilerplate.git"
+    "url": "https://github.com/bcrespy/creenv-color.git"
   },
   "bugs": {
-    "mail": "eu.nikitin@gmail.com",
-    "url": "http://github.com/eunikitin/modern-package-boilerplate/issues"
+    "mail": "baptiste.crespy@gmail.com",
+    "url": "https://github.com/bcrespy/creenv-color/issues"
   },
   "main": "lib/index.js",
   "scripts": {
