@@ -21,7 +21,7 @@
   },
   "main": "lib/index.js",
   "scripts": {
-    "clean": "rimraf ./coverage ./lib",
+    "clean": "",
     "dev": "cross-env NODE_ENV=development rollup -c -o lib/index.js",
     "build": "cross-env NODE_ENV=production rollup -c -o lib/index.js",
     "test": "cross-env NODE_ENV=test jest",
@@ -30,8 +30,8 @@
     "coveralls": "npm run test:cover && cat ./coverage/lcov.info | coveralls",
     "flow": "node ./scripts/flow",
     "flow-typed": "npm run clean && flow-typed install --overwrite || true",
-    "lint": "eslint src",
-    "prepublish": "npm run clean && npm run test && npm run build"
+    "lint": "eslint lib",
+    "prepublish": "npm run test"
   },
   "peerDependencies": {
     "react": "^15 || ^16",

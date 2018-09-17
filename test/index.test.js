@@ -1,4 +1,4 @@
-import { Color } from '../src/index';
+import Color from '../src/index';
 
 
 /**
@@ -41,10 +41,4 @@ test( "color operations", () => {
       color2 = new Color(255,100,0),
       color3 = new Color(245,51,111);
   
-  expect( color1.interpolateWith(color2, 0.5).toObject() ).toEqual({r:127.5, g: 75, b: 50, a: 1.0});
-
-  // grayscales 
-  expect( color1.grayscale().toObject() ).toEqual( { r: 50, g: 50, b: 50, a: 1 } );
-  expect( color3.grayscaleLuminance().rounded().toObject() ).toEqual( { r: 97, g: 97, b: 97, a: 1 } );
-  expect( color3.grayscaleFastest().toObject() ).toEqual( { r: 51, g: 51, b: 51, a: 1 } );
 });
