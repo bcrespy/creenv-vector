@@ -170,6 +170,16 @@ class Color {
     }
     return Color.fromArray(ret);
   }
+
+  /**
+   * Computes the contrast with the other color
+   * [https://www.w3.org/TR/WCAG20/#contrast-ratiodef]
+   * @param {Color} color the other color 
+   * @return {number} contrast between the 2 colors 
+   */
+  contrastWith( color ) {
+    return (this.relativeLuminance()+0.05) / (color.relativeLuminance()+0.05);
+  }
 }
 
 
