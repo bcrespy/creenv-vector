@@ -1,5 +1,5 @@
 {
-  "name": "creenv-color",
+  "name": "@creenv/color",
   "version": "0.1.0",
   "description": "Immutable color class, can be used for storing colors of color operations",
   "keywords": [
@@ -28,10 +28,10 @@
     "test:watch": "cross-env NODE_ENV=test jest --watch",
     "test:cover": "cross-env NODE_ENV=test jest --coverage",
     "coveralls": "npm run test:cover && cat ./coverage/lcov.info | coveralls",
-    "flow": "flow",
+    "flow": "node ./scripts/flow",
     "flow-typed": "npm run clean && flow-typed install --overwrite || true",
     "lint": "eslint src",
-    "prepublish": "npm run clean && npm run test && npm run flow && npm run lint && npm run build"
+    "prepublish": "npm run clean && npm run test && npm run build"
   },
   "peerDependencies": {
     "react": "^15 || ^16",

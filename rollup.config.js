@@ -27,7 +27,7 @@ const config = {
   ],
 };
 
-if (env === 'production') {
+/*if (env === 'production') {
   config.plugins.push(
     uglify({
       compress: {
@@ -38,6 +38,6 @@ if (env === 'production') {
       },
     }),
   );
-}
+}*/
 
 export default config;
