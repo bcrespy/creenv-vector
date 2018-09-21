@@ -1,6 +1,6 @@
 {
   "name": "@creenv/color",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "Immutable color class, can be used for storing colors of color operations",
   "keywords": [
     "color",
