@@ -1,4 +1,4 @@
-import Color from '../lib/index';
+var Color = require("../lib/index");
 
 
 /**
@@ -45,9 +45,10 @@ test( "color setters", () => {
 });
 
 test( "class convertion", () => {
+  class Cheating { constructor(a,b,c){ this.x = a+b+c; } };
   let testClass = (r,g,b) => [r,g,b],
       testFunc = x => x*2;
-  expect( new Color(20,25,30).convert(testClass,testFunc) ).toEqual( [40,50,60] );
+  expect( new Color(20,25,30).convert(Cheating,testFunc).x ).toEqual( 150 );
   expect( new Color(20,30,40).apply(x => x-5).toObject() ).toEqual( { r: 15, g: 25, b: 35, a: 1 } );
 });
 
