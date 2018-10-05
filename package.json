@@ -1,6 +1,6 @@
 {
   "name": "@creenv/color",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Immutable color class, can be used for storing colors of color operations",
   "keywords": [
     "color",
@@ -27,10 +27,8 @@
     "test:cover": "cross-env NODE_ENV=test jest --coverage",
     "prepublish": "npm run test"
   },
-  "peerDependencies": {
-  },
-  "dependencies": {
-  },
+  "peerDependencies": {},
+  "dependencies": {},
   "devDependencies": {
     "cross-env": "^5.1.4"
   },
