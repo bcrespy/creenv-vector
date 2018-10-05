@@ -33,6 +33,17 @@ test( "color getters", () => {
   expect( new Color( 135.1, 140.5, 120 ).rounded().toObject() ).toEqual({ r: 135, g: 141, b: 120, a: 1 });
 });
 
+test( "color setters", () => {
+  let color = new Color();
+  let magenta = [255,0,250],
+      reddish = [200, 10, 50, 0.5];
+  color.rgb = magenta;
+  expect(color.toObject()).toEqual( { r: 255, g: 0, b: 250, a: 1 } );
+
+  color.rgba = reddish;
+  expect(color.toObject()).toEqual( { r: 200, g: 10, b: 50, a: 0.5 } );
+});
+
 test( "class convertion", () => {
   let testClass = (r,g,b) => [r,g,b],
       testFunc = x => x*2;
@@ -45,4 +56,5 @@ test( "color operations", () => {
       color2 = new Color(255,100,0),
       color3 = new Color(245,51,111);
   
+      // need to add color operations tests
 });
