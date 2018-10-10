@@ -1,7 +1,7 @@
 {
   "name": "@creenv/color",
   "version": "0.3.1",
-  "description": "Immutable color class, can be used for storing colors of color operations",
+  "description": "The color class used by the creenv environment. Developed in es6.",
   "keywords": [
     "color",
     "colors",
@@ -25,12 +25,34 @@
     "test": "cross-env NODE_ENV=test jest",
     "test:watch": "cross-env NODE_ENV=test jest --watch",
     "test:cover": "cross-env NODE_ENV=test jest --coverage",
-    "prepublish": "npm run test"
+    "prepublish": "npm run test",
+    "start": "webpack-dev-server --config webpack/dev.config.js"
   },
   "peerDependencies": {},
-  "dependencies": {},
+  "dependencies": {
+    "color-string": "^1.5.3"
+  },
   "devDependencies": {
-    "cross-env": "^5.1.4"
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
+    "babel-jest": "^23.6.0",
+    "babel-loader": "^8.0.4",
+    "brfs": "^2.0.1",
+    "clean-webpack-plugin": "^0.1.19",
+    "cross-env": "^5.1.4",
+    "css-loader": "^1.0.0",
+    "file-loader": "^2.0.0",
+    "html-loader": "^0.5.5",
+    "html-webpack-harddisk-plugin": "^0.2.0",
+    "html-webpack-plugin": "^3.2.0",
+    "jsdoc-to-markdown": "^4.0.1",
+    "node-sass": "^4.9.3",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.0",
+    "watchify": "^3.11.0",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.9"
   },
   "jest": {
     "testEnvironment": "node"
