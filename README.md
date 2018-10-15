@@ -68,6 +68,7 @@ Because we want the vector class to be as fast as possible, its constructor need
 |---|---|---|
 *vector* | **Vector** | The Vector to copy from |
 
+
 **@Return** a new vector, which has the same components as *vector*.
 
 ___
@@ -98,6 +99,7 @@ Updates the value of the vector's components. Same behavious than constructor. I
 |---|---|---|
 |*...component* | **...number** | The new components of the vector |
 
+
 ```js
 // example 
 let vec = new Vector(12,11,5);
@@ -127,6 +129,7 @@ Applies a function *func* to all the components of this vector.
 |---|---|---|
 |*func* | **Function** | The function that will be applied to this vector. Does sending arguments to that function is not possible |
 
+
 ```js
 // example 
 let vec = new Vector(10,50);
@@ -145,6 +148,7 @@ Adds the components in parameter to the components of the vector
 | Name | Type | Def |
 |---|---|---|
 |*...components* | **...number** | The components that will be added to their corresponding component |
+
 
 ```js
 // example 
@@ -165,6 +169,7 @@ Adds the @param *vector* to this vector.
 | Name | Type | Def |
 |---|---|---|
 |*vector* | **Vector** | vector to be added to this vector, needs to have at least the same number of dimensions |
+
 
 ```js
 // example 
@@ -187,6 +192,7 @@ Adds the @param *scalar* number to all the components of this vector.
 |---|---|---|
 |*scalar* | **number** | the scalar number that will be added to all the components |
 
+
 ```js
 // example 
 let vec = new Vector(10,11,12);
@@ -207,6 +213,7 @@ Substracts the components in parameter to the components of the vector
 |---|---|---|
 |*...components* | **...number** | the components that will be substracted to the corresponding components of this vector |
 
+
 ```js
 // example 
 let vec = new Vector(12,11,10);
@@ -226,6 +233,7 @@ Substract the @param *vector* to this vector.
 | Name | Type | Def |
 |---|---|---|
 |*vector* | **Vector** | vector to be substracted to this vector, needs to have at least the same number of dimensions |
+
 
 ```js
 // example 
@@ -248,6 +256,7 @@ Substracts the @param *scalar* number to all the components of this vector.
 |---|---|---|
 |*scalar* | **number** | the scalar number that will be substracted to all the components |
 
+
 ```js
 // example 
 let vec = new Vector(10,11,12);
@@ -268,6 +277,7 @@ Multiplies the components in parameter to the components of the vector
 |---|---|---|
 |*...components* | **...number** | the components that will be multiplied with the corresponding components of this vector |
 
+
 ```js
 // example 
 let vec = new Vector(12,11,10);
@@ -287,6 +297,7 @@ Multiplies the components of @param *vector* with the components of this vector,
 | Name | Type | Def |
 |---|---|---|
 |*vector* | **Vector** | vector to be multiplied with this vector, needs to have at least the same number of dimensions |
+
 
 ```js
 // example 
@@ -309,6 +320,7 @@ Mutiplies the components of this vector with the @param *scalar* number.
 |---|---|---|
 |*scalar* | **number** | the scalar number that will be multiplied with all the components |
 
+
 ```js
 // example 
 let vec = new Vector(10,11,12);
@@ -329,6 +341,7 @@ Divides the components of this vector by the components in argument
 |---|---|---|
 |*...components* | **...number** | the components that will be divided to the corresponding components of this vector |
 
+
 ```js
 // example 
 let vec = new Vector(12,11,10);
@@ -348,6 +361,7 @@ Divides the components of this vector by the corresponding components of @param 
 | Name | Type | Def |
 |---|---|---|
 |*vector* | **Vector** | vector to be divided to this vector, needs to have at least the same number of dimensions |
+
 
 ```js
 // example 
@@ -370,6 +384,7 @@ Divides the components of this vector by the @param *scalar* number.
 |---|---|---|
 |*scalar* | **number** | the scalar number that will be divided to all the components |
 
+
 ```js
 // example 
 let vec = new Vector(10,11,12);
@@ -390,6 +405,7 @@ Returns the dot product between this vector and the @param *vector*.
 |---|---|---|
 |*vector* | **number** | the vector to compute dot product with |
 
+
 ```js
 // example 
 let u = new Vector(12,5,8),
@@ -408,6 +424,7 @@ Returns the cross product between this vector and the @param *vector*.
 | Name | Type | Def |
 |---|---|---|
 |*vector* | **number** | the vector to compute cross product with. Needs to have the same number of dimensions that this vector |
+
 
 ```js
 // example 
@@ -445,6 +462,7 @@ Tests if this vector and @param *vector* have the same number of dimensions and 
 | Name | Type | Def |
 |---|---|---|
 |*vector* | **number** | the vector to to test this with|
+
 
 ```js
 // example
