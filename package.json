@@ -1,9 +1,16 @@
 {
   "name": "@creenv/vector",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "N-dimensions classes for vectors. Abstraction for a vector class, implementation of Vector2, Vector3, Vector4.",
   "keywords": [
-    "creative", "environment", "creenv", "vector", "vector2", "vector3", "vector4", "vectorN"
+    "creative",
+    "environment",
+    "creenv",
+    "vector",
+    "vector2",
+    "vector3",
+    "vector4",
+    "vectorN"
   ],
   "license": "MIT",
   "author": "Baptiste Crespy",
@@ -29,8 +36,7 @@
     "start": "webpack-dev-server --config webpack/dev.config.js"
   },
   "peerDependencies": {},
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "@babel/core": "^7.1.2",
     "@babel/preset-env": "^7.1.0",
