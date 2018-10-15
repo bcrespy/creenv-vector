@@ -1,61 +1,95 @@
-import Color from '../lib/index.es6';
+import Vector from '../lib/vector';
 
 
-/**
- * Colors used for tests 
- * 
- * 1
- * r: 245, g: 51 , b: 111
- * #f5336f
- */
 
-let expected1 = {
-  r: 245, g: 51, b: 111, a: 1.0
-};
+let vect = new Vector(12,14,-4);
 
+test("vector instanciation", () => {
+  let v = new Vector(50,60,80,40,90);
+  expect(v.components).toEqual([50,60,80,40,90]);
+  expect(v.dimensions).toBe(5);
 
-test( "color instantiation using different inputs", () => {
-  expect( new Color().toObject() ).toEqual( { r: 0, g: 0, b: 0, a: 1 } );
-  expect( new Color(245,51,111).toObject() ).toEqual( expected1 );
-  expect( new Color("#f5336f").toObject() ).toEqual( expected1 );
-  expect( Color.fromString("#f5336f").toObject() ).toEqual( expected1 );
-  expect( new Color([245,51,111]).toObject() ).toEqual( expected1 );
-  expect( Color.fromHSL(341,0.91,0.58).rounded().toObject() ).toEqual( { r: 245, g: 50, b: 112, a: 1} );
-  expect( Color.fromHSV(320,0.50,0.40).rounded().toObject() ).toEqual( { r: 102, g: 51, b: 85, a: 1 } );
+  let copy = Vector.fromVector(v);
+  copy.components[2] = 100;
+  expect(copy.components).toEqual([50,60,100,40,90]);
+  expect(v.components).toEqual([50,60,80,40,90]);
 });
 
-test( "color getters", () => {
-  let color = new Color(245,51,111);
-  expect( color.rgb ).toEqual( [245, 51, 111] );
-  expect( color.rgba ).toEqual([245, 51, 111, 1.0]);
-  expect( color.toArray() ).toEqual( [ 245, 51, 111, 1.0 ] );
-  expect( color.hex ).toEqual( "#f5336f" );
-  expect( new Color( 135.1, 140.5, 120 ).rounded().toObject() ).toEqual({ r: 135, g: 141, b: 120, a: 1 });
-});
-
-test( "color setters", () => {
-  let color = new Color();
-  let magenta = [255,0,250],
-      reddish = [200, 10, 50, 0.5];
-  color.rgb = magenta;
-  expect(color.toObject()).toEqual( { r: 255, g: 0, b: 250, a: 1 } );
-
-  color.rgba = reddish;
-  expect(color.toObject()).toEqual( { r: 200, g: 10, b: 50, a: 0.5 } );
-});
-
-test( "class convertion", () => {
-  class Cheating { constructor(a,b,c){ this.x = a+b+c; } };
-  let testClass = (r,g,b) => [r,g,b],
-      testFunc = x => x*2;
-  expect( new Color(20,25,30).convert(Cheating,testFunc).x ).toEqual( 150 );
-  expect( new Color(20,30,40).apply(x => x-5).toObject() ).toEqual( { r: 15, g: 25, b: 35, a: 1 } );
-});
-
-test( "color operations", () => {
-  let color1 = new Color(0,50,100),
-      color2 = new Color(255,100,0),
-      color3 = new Color(245,51,111);
+test("addition", () => {
+  let u = new Vector(30,80),
+      v = new Vector(20,-5);
   
-      // need to add color operations tests
+  u.add(10,20);
+  expect(u.components).toEqual([40,100]);
+
+  u.addVector(v);
+  expect(u.components).toEqual([60,95]);
+
+  u.addScalar(80);
+  expect(u.components).toEqual([140,175]);
 });
+
+test("substraction", () => {
+  let u = new Vector(30,80),
+      v = new Vector(20,-5);
+  
+  u.substract(10,20);
+  expect(u.components).toEqual([20,60]);
+
+  u.substractVector(v);
+  expect(u.components).toEqual([0,65]);
+
+  v.substractScalar(12);
+  expect(v.components).toEqual([8,-17]);
+});
+
+test("multiplication", () => {
+  let u = new Vector(30,80),
+      v = new Vector(2,-4);
+  
+  u.multiply(2,4);
+  expect(u.components).toEqual([60,320]);
+
+  u.multiplyVector(v);
+  expect(u.components).toEqual([120,-1280]);
+
+  u.multiplyScalar(10);
+  expect(u.components).toEqual([1200, -12800]);
+});
+
+test("divison", () => {
+  let u = new Vector(100, 120),
+      v = new Vector(2,6);
+  
+  u.divide(10,2);
+  expect(u.components).toEqual([10,60]);
+
+  u.divideVector(v);
+  expect(u.components).toEqual([5,10]);
+
+  u.divideScalar(5);
+  expect(u.components).toEqual([1,2])
+});
+
+test("dot product", () => {
+  let u = new Vector(12,5,8),
+      v = new Vector(-1,0,4);
+  expect(u.dot(v)).toBe(20);
+});
+
+test("cross product", () => {
+  let u = new Vector(4,3,-2),
+      v = new Vector(12,7,0);
+
+  let w = u.cross(v);
+  expect(w.components).toEqual([14,-24,-8]);
+});
+
+test("length", () => {
+  expect(vect.length).toBe(18.867962264113206);
+})
+
+test("normalization", () => {
+  let u = new Vector(10,5,-2);
+  expect(u.normalize().components[0]).toBeCloseTo(0.8805, 4);
+})

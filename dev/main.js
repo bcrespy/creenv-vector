@@ -1,8 +1,8 @@
-import Color from '../lib/index.es6';
+import Vector from '../lib/vector';
+import Vector2 from '../lib/vector2';
 
 
-let color = new Color([255,10,10]);
-color.r = 50;
+let v = new Vector2(10,20,30);
 
-let c = Color.fromString("#eiojzeoijfef");
-console.log(c)
+let copy = Vector2.fromVector(v);
+console.log(copy);

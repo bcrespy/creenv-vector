@@ -1,25 +1,25 @@
 {
-  "name": "@creenv/color",
-  "version": "1.0.1",
-  "description": "The color class used by the creenv environment. Developed in es6.",
+  "name": "@creenv/vector",
+  "version": "0.0.1",
+  "description": "N-dimensions classes for vectors. Abstraction for a vector class, implementation of Vector2, Vector3, Vector4.",
   "keywords": [
-    "color",
-    "colors",
-    "color operations",
-    "creenv"
+    "creative", "environment", "creenv", "vector", "vector2", "vector3", "vector4", "vectorN"
   ],
   "license": "MIT",
   "author": "Baptiste Crespy",
-  "homepage": "https://github.com/bcrespy/creenv-color.git",
+  "homepage": "https://github.com/bcrespy/creenv-vector",
   "repository": {
     "type": "git",
-    "url": "https://github.com/bcrespy/creenv-color.git"
+    "url": "https://github.com/bcrespy/creenv-vector.git"
   },
   "bugs": {
     "mail": "baptiste.crespy@gmail.com",
-    "url": "https://github.com/bcrespy/creenv-color/issues"
+    "url": "https://github.com/bcrespy/creenv-vector/issues"
   },
   "main": "lib/index.js",
+  "files": [
+    "/lib"
+  ],
   "scripts": {
     "clean": "",
     "test": "cross-env NODE_ENV=test jest",
@@ -30,7 +30,6 @@
   },
   "peerDependencies": {},
   "dependencies": {
-    "color-string": "^1.5.3"
   },
   "devDependencies": {
     "@babel/core": "^7.1.2",
