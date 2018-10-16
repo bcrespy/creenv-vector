@@ -23,12 +23,12 @@
     "mail": "baptiste.crespy@gmail.com",
     "url": "https://github.com/bcrespy/creenv-vector/issues"
   },
-  "main": "./index.js",
+  "main": "index.js",
   "files": [
-    "./index.js",
-    "./vector2.js",
-    "./vector3.js",
-    "./vector4.js"
+    "index.js",
+    "vector2.js",
+    "vector3.js",
+    "vector4.js"
   ],
   "scripts": {
     "clean": "",
