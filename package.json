@@ -25,14 +25,18 @@
   },
   "main": "lib/index.js",
   "files": [
-    "/lib"
+    "./index.js",
+    "./vector2.js",
+    "./vector3.js",
+    "./vector4.js"
   ],
   "scripts": {
     "clean": "",
     "test": "cross-env NODE_ENV=test jest",
     "test:watch": "cross-env NODE_ENV=test jest --watch",
     "test:cover": "cross-env NODE_ENV=test jest --coverage",
-    "prepublish": "npm run test",
+    "prepublish": "npm run test && gulp --gulpfile ./gulp/prepublish.js",
+    "postpublish": "gulp --gulpfile ./gulp/postpublish.js",
     "start": "webpack-dev-server --config webpack/dev.config.js"
   },
   "peerDependencies": {},
@@ -48,6 +52,9 @@
     "cross-env": "^5.1.4",
     "css-loader": "^1.0.0",
     "file-loader": "^2.0.0",
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.4.0",
+    "gulp-cli": "^2.0.1",
     "html-loader": "^0.5.5",
     "html-webpack-harddisk-plugin": "^0.2.0",
     "html-webpack-plugin": "^3.2.0",
@@ -61,6 +68,7 @@
     "webpack-dev-server": "^3.1.9"
   },
   "jest": {
-    "testEnvironment": "node"
+    "testEnvironment": "node",
+    "preset": "react-native"
   }
 }
