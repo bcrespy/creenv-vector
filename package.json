@@ -1,6 +1,6 @@
 {
   "name": "@creenv/vector",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "N-dimensions classes for vectors. Abstraction for a vector class, implementation of Vector2, Vector3, Vector4.",
   "keywords": [
     "creative",
