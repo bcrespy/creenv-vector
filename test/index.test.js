@@ -13,6 +13,9 @@ test("vector instanciation", () => {
   copy.components[2] = 100;
   expect(copy.components).toEqual([50,60,100,40,90]);
   expect(v.components).toEqual([50,60,80,40,90]);
+
+  let copy2 = v.copy();
+  expect(copy2.components).toEqual([50,60,80,40,90]);
 });
 
 test("addition", () => {
